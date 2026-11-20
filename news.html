@@ -1,0 +1,206 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>World Brief | Friday 20 November 2026</title>
+  <style>
+    :root {
+      --paper: #f6efe0;
+      --ink: #26231f;
+      --accent: #c0392b;
+      --rule: #b5ab99;
+      --serif: Georgia, 'DejaVu Serif', serif;
+      --sans: Arial, 'DejaVu Sans', sans-serif;
+      --mono: 'DejaVu Sans Mono', monospace;
+    }
+
+    * { box-sizing: border-box; }
+    html, body { margin: 0; overflow: hidden; background: var(--paper); }
+    body { color: var(--ink); font-family: var(--sans); }
+    h1, h2, p, figure, blockquote { margin: 0; }
+
+    .edition {
+      display: grid;
+      grid-template-rows: auto minmax(0, 1fr) auto;
+      gap: 20px;
+      width: 1024px;
+      height: 1024px;
+      padding: 36px 42px 30px;
+      overflow: hidden;
+    }
+
+    .masthead, .folio, .story-label { display: flex; justify-content: space-between; }
+    .masthead {
+      align-items: end;
+      border-top: 6px solid var(--accent);
+      border-bottom: 2px solid var(--ink);
+      padding: 15px 0 19px;
+    }
+
+    .masthead h1 { font: 700 64px/1 var(--serif); }
+    .masthead time { font: 700 18px/1.4 var(--sans); }
+    .masthead .meta { margin-bottom: 8px; }
+    .meta, .story-label, .folio, .diagram-caption {
+      font: 700 12px/1.3 var(--mono);
+      text-transform: uppercase;
+    }
+
+    .stories {
+      display: grid;
+      grid-template-columns: minmax(0, 3fr) minmax(0, 2fr);
+      grid-template-rows: minmax(0, 1fr);
+    }
+
+    .lead {
+      display: flex;
+      flex-direction: column;
+      padding: 7px 27px 0 0;
+    }
+
+    .story-label { align-items: center; gap: 10px; color: var(--accent); }
+    .label-index { padding-right: 8px; margin-right: 7px; border-right: 1px solid var(--rule); }
+    .dateline { color: var(--ink); text-align: right; }
+    h2 { font-family: var(--serif); }
+    .lead h2 { margin: 18px 0 15px; font-size: 44px; line-height: 1.08; }
+    .lead-copy { max-width: 520px; font-size: 20px; line-height: 1.42; }
+
+    .summit-figure {
+      margin: auto 0;
+      padding: 12px 0 10px;
+      border-block: 1px solid var(--rule);
+    }
+
+    .diagram-caption { display: flex; align-items: center; gap: 10px; }
+    .diagram-caption::before { content: ''; width: 12px; height: 3px; background: var(--accent); }
+    .summit-figure svg { display: block; width: 100%; height: 184px; }
+    .diagram-label { fill: var(--ink); font: 700 13px var(--mono); }
+    .diagram-note { fill: var(--accent); font: 700 12px var(--mono); }
+
+    .pull-quote { padding-left: 10px; border-left: 2px solid var(--accent); }
+    .pull-quote p { font: italic 16px/1.25 var(--serif); }
+    .pull-quote cite { font: normal 700 11px/1.3 var(--mono); }
+    .lead .pull-quote { margin: 0 0 20px; }
+    .lead .pull-quote p { margin-bottom: 4px; font-size: 18px; }
+
+    .briefing {
+      display: grid;
+      grid-template-columns: max-content 1fr;
+      align-items: center;
+      gap: 18px;
+      border-block: 1px solid var(--ink);
+      padding: 14px 0;
+    }
+
+    .briefing strong { color: var(--accent); font: 700 34px/1 var(--serif); }
+    .briefing p { font: 15px/1.35 var(--sans); }
+    .briefing .meta { display: block; margin-bottom: 4px; }
+
+    .digest {
+      display: grid;
+      grid-template-rows: minmax(0, 1.13fr) minmax(0, 1fr) minmax(0, .92fr);
+      padding-left: 26px;
+      border-left: 1px solid var(--rule);
+    }
+
+    .digest article { padding: 13px 0; }
+    .digest article:first-child { padding-top: 7px; }
+    .digest article + article { border-top: 1px solid var(--rule); }
+    .digest h2 { margin: 8px 0; font-size: 29px; line-height: 1.06; }
+    .digest .summary { font-size: 16px; line-height: 1.4; }
+    .digest .pull-quote { margin-top: 10px; }
+    .digest .pull-quote cite { margin-left: 4px; }
+    .stat { display: flex; align-items: center; gap: 12px; margin-top: 10px; }
+    .stat strong { color: var(--accent); font: 700 31px/1 var(--serif); }
+    .folio { border-top: 2px solid var(--ink); padding-top: 10px; }
+  </style>
+</head>
+<body>
+  <main class="edition">
+    <header class="masthead">
+      <div>
+        <p class="meta">International news digest</p>
+        <h1>World Brief</h1>
+      </div>
+      <time datetime="2026-11-20">Friday 20 November 2026</time>
+    </header>
+
+    <section class="stories" aria-label="Today's four stories">
+      <article class="lead">
+        <p class="story-label">
+          <span><span class="label-index">01</span> The lead</span>
+          <span class="dateline">Shenzhen, China</span>
+        </p>
+        <h2>Nuclear-risk pledge,<br>no deal on Ukraine</h2>
+        <p class="lead-copy">Donald Trump, Xi Jinping and Vladimir Putin held their first three-way summit on the sidelines of APEC on Thursday. They pledged talks on reducing nuclear risks and preventing the spread of nuclear weapons. The war in Ukraine saw no breakthrough.</p>
+
+        <figure class="summit-figure">
+          <figcaption class="diagram-caption">The three delegations</figcaption>
+          <svg viewBox="0 0 536 184" aria-hidden="true">
+            <defs>
+              <pattern id="hatch" width="6" height="6" patternUnits="userSpaceOnUse" patternTransform="rotate(45)">
+                <path d="M0 0v6" stroke="#b5ab99" stroke-width="1" opacity=".45"/>
+              </pattern>
+            </defs>
+            <rect x="126" y="61" width="284" height="68" rx="34" fill="url(#hatch)" stroke="#26231f"/>
+            <path d="M114 95h36m236 0h36M268 53v23" fill="none" stroke="#c0392b" stroke-width="1.5"/>
+            <path d="M150 91v8m236-8v8m-122-23h8" stroke="#c0392b" stroke-width="1.5"/>
+            <g class="diagram-label" text-anchor="middle">
+              <text x="268" y="29">Xi Jinping</text>
+              <text x="55" y="91">Donald Trump</text>
+              <text x="476" y="91">Vladimir Putin</text>
+            </g>
+            <g class="diagram-note" text-anchor="middle">
+              <text x="268" y="46">CHINA</text>
+              <text x="55" y="108">UNITED STATES</text>
+              <text x="476" y="108">RUSSIA</text>
+              <text x="268" y="100">TRILATERAL TALKS</text>
+              <text x="268" y="156">APEC &middot; 19 NOVEMBER</text>
+            </g>
+          </svg>
+        </figure>
+
+        <blockquote class="pull-quote">
+          <p>&ldquo;A nuclear war cannot be won and must never be fought.&rdquo;</p>
+          <cite>White House summit readout</cite>
+        </blockquote>
+
+        <div class="briefing">
+          <strong>Noon ET</strong>
+          <p><span class="meta">Friday &middot; Washington</span>Trump is due to hold a White House press conference on his Asia trip.</p>
+        </div>
+      </article>
+
+      <section class="digest" aria-label="Also in the news">
+        <article>
+          <p class="story-label"><span><span class="label-index">02</span> Ukraine</span></p>
+          <h2>A NATO-style pledge for Ukraine?</h2>
+          <p class="summary">U.S. envoy Jared Kushner says Trump is open to a NATO-like mutual-defence guarantee for Ukraine. Questions over Crimea and the Kerch Bridge remain unresolved.</p>
+          <blockquote class="pull-quote">
+            <p>Russia is &ldquo;comfortable&rdquo; with the idea.</p>
+            <cite>Kushner&rsquo;s assessment</cite>
+          </blockquote>
+        </article>
+
+        <article>
+          <p class="story-label"><span><span class="label-index">03</span> Middle East</span></p>
+          <h2>Iran war escalates again</h2>
+          <p class="summary">The war quietly intensified this week, with no clear path to ending it. Trump says he is in no rush to decide on further military action and will revisit the question after Jan. 1.</p>
+        </article>
+
+        <article>
+          <p class="story-label"><span><span class="label-index">04</span> United Nations</span></p>
+          <h2>UN acts on paternity claims</h2>
+          <p class="summary">The UN is adding accountability measures, including a claims tracker, to help children fathered by peacekeepers.</p>
+          <p class="stat"><strong>~500</strong><span class="meta">Paternity and child support claims unresolved</span></p>
+        </article>
+      </section>
+    </section>
+
+    <footer class="folio">
+      <span>World Brief &middot; Friday edition</span>
+      <span>20 Nov 2026</span>
+    </footer>
+  </main>
+</body>
+</html>

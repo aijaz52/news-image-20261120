@@ -1,12 +1,20 @@
-import asyncio, sys
+import asyncio
+from pathlib import Path
+
 from playwright.async_api import async_playwright
 
+ROOT = Path(__file__).resolve().parent
+
+
 async def main():
-    async with async_playwright() as p:
-        b = await p.chromium.launch(args=["--no-sandbox"])
-        pg = await b.new_page(viewport={"width":1024,"height":1024})
-        await pg.goto("file:///root/build/news-image/news.html")
-        await pg.wait_for_timeout(500)
-        await pg.screenshot(path="/root/build/news-image/entry.png")
-        await b.close()
-asyncio.run(main())
+    async with async_playwright() as playwright:
+        browser = await playwright.chromium.launch(args=["--no-sandbox"])
+        page = await browser.new_page(viewport={"width": 1024, "height": 1024})
+        await page.goto((ROOT / "news.html").as_uri())
+        await page.evaluate("document.fonts.ready")
+        await page.screenshot(path=ROOT / "entry.png")
+        await browser.close()
+
+
+if __name__ == "__main__":
+    asyncio.run(main())
